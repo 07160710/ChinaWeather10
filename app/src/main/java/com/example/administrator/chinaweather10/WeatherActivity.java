@@ -51,7 +51,7 @@ public class WeatherActivity extends AppCompatActivity implements Runnable{
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                body.removeAllViews();
+                body.removeAllViews();//移除当前所有视图
                 city = value.getText().toString();
                 Toast.makeText(WeatherActivity.this,"正在查询天气信息...",Toast.LENGTH_LONG).show();
                 Thread th = new Thread(WeatherActivity.this);
@@ -150,32 +150,32 @@ public class WeatherActivity extends AppCompatActivity implements Runnable{
         for(int i = 0;i<cityname.size();i++){
             LinearLayout linearLayout = new LinearLayout(this);
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            //1
+            //1城市
             TextView dayView = new TextView(this);
             dayView.setLayoutParams(params);
             dayView.setText(cityname.elementAt(i));
             linearLayout.addView(dayView);
-            //2
+            //2描述
             TextView summaryView = new TextView(this);
             summaryView.setLayoutParams(params);
             summaryView.setText(summary.elementAt(i));
             linearLayout.addView(summaryView);
-            //3
+            //3天气图标显示
             ImageView icon = new ImageView(this);
             icon.setLayoutParams(params);
             icon.setImageBitmap(bitmap.elementAt(i));
             linearLayout.addView(icon);
-            //4
+            //4最低气温显示
             TextView lowView = new TextView(this);
             lowView.setLayoutParams(params);
             lowView.setText(low.elementAt(i));
             linearLayout.addView(lowView);
-            //5
+            //5最高视图显示
             TextView highView = new TextView(this);
             highView.setLayoutParams(params);
             highView.setText(high.elementAt(i));
             linearLayout.addView(highView);
-            //6
+            //6添加所有的View到总视图中
             body.addView(linearLayout);
         }
     }
