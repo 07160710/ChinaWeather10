@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChinaWeather10</string>
+    <string name="city">城市</string>
 </resources>
